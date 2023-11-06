@@ -1,0 +1,1 @@
+This repo consists of code to create a login page with HTML, CSS and JavaScript
