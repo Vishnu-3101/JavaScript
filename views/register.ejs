@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/styleRegister.css">
 </head>
 <body>
     <header>
@@ -19,33 +19,9 @@
     </header>
 
     <div class="wrapper">
-        <div class="formBox">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="inputBox">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="inputBox">
-                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <div class="rememberMe">
-                    <label><input type="checkbox">Remember Me</label>
-                    <a href="#">Forget Password?</a>
-                </div>
-                <button type="submit" class="submit-btn">Login</button>
-                <div class="register">
-                    <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
-                </div>
-            </form>
-        </div>
-
         <div class="formBox-register">
             <h2>Register</h2>
-            <form action="#">
+            <form action="/register" method="post">
                 <div class="inputBox">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="text" required>
@@ -65,8 +41,8 @@
                     <label><input type="checkbox">I agree the terms and conditions</label>
                 </div>
                 <button type="submit" class="submit-btn">Register</button>
-                <div class="register">
-                    <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+                <div class="login">
+                    <p>Already have an account?<a href="/login" class="login-link">Login</a></p>
                 </div>
             </form>
         </div>
