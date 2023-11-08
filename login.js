@@ -17,12 +17,12 @@ const encoder = parser.urlencoded();
 app.use("/assets",express.static("assets"));
 app.use(express.json());
 
-
+require('dotenv').config();
 //Creating a connection to mysql server and accessing the database in it
 const connection = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"Mysql@21",
+    password:process.env.mysqlPass,
     database:"nodejs"
 })
 
@@ -61,7 +61,7 @@ app.post("/login",encoder,(req,res)=>{
     connection.query("select * from loginuser where user_name = ? and user_password=?" , [username,password],(error,results,fields) => {
         if(results.length >0){
             res.redirect("/welcome");
-            console.log(results);
+            // console.log(results);
         }
         else{
             res.redirect("/login");
