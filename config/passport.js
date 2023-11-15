@@ -1,7 +1,6 @@
 const passport = require('passport');
 const LocalStratergy = require('passport-local');
 const User = require('./database');
-const validatePass = require('./cryptoPassword');
 
 const customFields = {
     usernameField : 'email'
@@ -13,7 +12,7 @@ async function verifyPassword(username,password,cb){
         if(!userDetails){
             return cb(null,false,{message: 'Incorrect username or password'});
         }
-        const validPass = validatePass(password,userDetails.password);
+        const validPass = userDetails.validatePass(password);
         if(validPass){
             return cb(null,userDetails);
         }
