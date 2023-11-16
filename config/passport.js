@@ -12,14 +12,14 @@ async function verifyPassword(username,password,cb){
     const userDetails = await User.findOne({username:username})
     try{
         if(!userDetails){
-            return cb(null,false,{message: 'Incorrect username or password'});
+            return cb(null,false,{message: 'Incorrect username'});
         }
         const validPass = validatePass(password,userDetails.hash,userDetails.salt);
         if(validPass){
             return cb(null,userDetails);
         }
         else{
-            return cb(null,false, {message: 'Incorrect username or password'});
+            return cb(null,false, {message: 'Incorrect password'});
         }
     }
     catch(e){

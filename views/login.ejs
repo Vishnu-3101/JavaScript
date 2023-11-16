@@ -22,6 +22,13 @@
         <div class="formBox">
             <h2>Login</h2>
             <form action="/login" method="post">
+                <div class="row">
+                    <% if(messages.error){ %>
+                        <div class="alert alert-danger">
+                            <strong><%= messages.error %></strong>
+                        </div>
+                    <% } %>
+                </div>
                 <div class="inputBox">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="email" name="email" required>
